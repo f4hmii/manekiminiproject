@@ -24,3 +24,7 @@ Route::get('/contact', function () {
 Route::get('/article/{id}', function ($id) {
     return view('article');
 })->name('article');
+// Market routes
+Route::get('/market', function () {
+    return view('market');
+})->name('market');

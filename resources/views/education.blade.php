@@ -1,183 +1,186 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- Page Header -->
-<section class="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">Pusat Edukasi Keuangan</h1>
-            <p class="text-xl text-blue-100 max-w-3xl mx-auto">
-                Temukan artikel-artikel terbaik kami untuk meningkatkan pengetahuan dan keterampilan keuangan Anda
-            </p>
-        </div>
-    </div>
-</section>
 
-<!-- Introduction -->
-<section class="py-12 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-blue-900 mb-6">Mengapa Penting Belajar Keuangan?</h2>
-            <p class="text-lg text-gray-600 mb-8">
-                Literasi keuangan adalah kemampuan untuk memahami dan menggunakan berbagai produk, layanan, dan konsep keuangan secara efektif untuk membuat keputusan finansial yang baik. Dengan pengetahuan keuangan yang memadai, Anda dapat:
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-lg shadow-sm">
-                    <div class="bg-gold-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-chart-line text-gold-500"></i>
-                    </div>
-                    <h3 class="font-bold text-blue-900 mb-2">Mengelola Uang Lebih Baik</h3>
-                    <p class="text-gray-600 text-sm">Membuat anggaran, mengontrol pengeluaran, dan menabung secara efektif</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-sm">
-                    <div class="bg-gold-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-piggy-bank text-gold-500"></i>
-                    </div>
-                    <h3 class="font-bold text-blue-900 mb-2">Membangun Dana Darurat</h3>
-                    <p class="text-gray-600 text-sm">Mempersiapkan dana darurat untuk menghadapi situasi tak terduga</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-sm">
-                    <div class="bg-gold-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-hand-holding-usd text-gold-500"></i>
-                    </div>
-                    <h3 class="font-bold text-blue-900 mb-2">Mencapai Tujuan Keuangan</h3>
-                    <p class="text-gray-600 text-sm">Mencapai tujuan keuangan jangka pendek, menengah, dan panjang</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<section class="relative bg-gradient-to-r from-blue-900 to-blue-800 text-white pt-20 pb-28 overflow-hidden">
+    <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+    <div class="absolute bottom-0 right-0 w-64 h-64 bg-gold-500 opacity-10 rounded-full blur-3xl -mr-16 -mb-16"></div>
 
-<!-- Articles Grid -->
-<section class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Artikel Terbaru</h2>
-            <p class="text-lg text-gray-600">Temukan berbagai topik menarik seputar keuangan pribadi</p>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
-            <form method="GET" action="{{ route('education') }}">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <!-- Search Bar -->
-                    <div class="relative">
-                        <input
-                            type="text"
-                            name="search"
-                            placeholder="Search articles..."
-                            class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                            value="{{ request('search') }}"
-                        >
-                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                            </svg>
-                        </div>
+    <div class="relative max-w-4xl mx-auto px-4 text-center z-10">
+        <span class="text-gold-400 font-bold tracking-widest uppercase text-xs mb-2 block">Maneki Academy</span>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Perpustakaan Ilmu Finansial</h1>
+        <p class="text-xl text-blue-100 mb-8">
+            Upgrade skill pengelolaan uangmu dengan ratusan artikel yang dikurasi oleh para ahli.
+        </p>
+
+        <form action="{{ route('education') }}" method="GET" class="relative max-w-2xl mx-auto">
+            <div class="relative group">
+                <div class="absolute inset-0 bg-gold-400 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
+                <div class="relative flex items-center bg-white rounded-full shadow-2xl p-2">
+                    <div class="pl-4 text-gray-400">
+                        <i class="fas fa-search text-lg"></i>
                     </div>
-
-                    <!-- Category Filter -->
-                    <select name="category" class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                        <option value="">All Categories</option>
-                        <option value="Budgeting" {{ request('category') === 'Budgeting' ? 'selected' : '' }}>Budgeting</option>
-                        <option value="Investing" {{ request('category') === 'Investing' ? 'selected' : '' }}>Investing</option>
-                        <option value="Savings" {{ request('category') === 'Savings' ? 'selected' : '' }}>Savings</option>
-                        <option value="Retirement Planning" {{ request('category') === 'Retirement Planning' ? 'selected' : '' }}>Retirement Planning</option>
-                        <option value="Insurance" {{ request('category') === 'Insurance' ? 'selected' : '' }}>Insurance</option>
-                        <option value="Debt Management" {{ request('category') === 'Debt Management' ? 'selected' : '' }}>Debt Management</option>
-                        <option value="Tax Planning" {{ request('category') === 'Tax Planning' ? 'selected' : '' }}>Tax Planning</option>
-                        <option value="Credit Management" {{ request('category') === 'Credit Management' ? 'selected' : '' }}>Credit Management</option>
-                    </select>
-
-                    <!-- Sort Options -->
-                    <select name="sort" class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                        <option value="newest" {{ request('sort') === 'newest' ? 'selected' : '' }}>Newest First</option>
-                        <option value="oldest" {{ request('sort') === 'oldest' ? 'selected' : '' }}>Oldest First</option>
-                        <option value="title" {{ request('sort') === 'title' ? 'selected' : '' }}>Title A-Z</option>
-                    </select>
-                </div>
-                <div class="mt-4 flex justify-center">
-                    <button type="submit" class="bg-blue-900 text-white px-6 py-2 rounded-lg hover:bg-blue-800 transition-colors">
-                        Apply Filters
+                    <input
+                        type="text"
+                        name="search"
+                        value="{{ request('search') }}"
+                        placeholder="Cari topik... (misal: Cara beli saham, Dana darurat)"
+                        class="w-full px-4 py-3 text-gray-700 bg-transparent border-none focus:ring-0 focus:outline-none placeholder-gray-400">
+                    <button type="submit" class="bg-blue-900 text-white px-6 py-3 rounded-full font-bold hover:bg-blue-800 transition-all shadow-md">
+                        Cari
                     </button>
                 </div>
-            </form>
-        </div>
-        </div>
-
-        
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Article 1 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105">
-                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=500&q=80" alt="Financial Planning" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded mb-3">Perencanaan Keuangan</span>
-                    <h3 class="text-xl font-bold text-blue-900 mb-3">Strategi Membuat Anggaran Bulanan yang Efektif</h3>
-                    <p class="text-gray-600 mb-4">Pelajari metode membuat anggaran bulanan yang realistis dan membantu mengontrol pengeluaran Anda.</p>
-                    <a href="{{ route('article', ['id' => 1]) }}" class="text-gold-500 font-semibold hover:text-gold-600 transition-colors duration-300">Baca Selengkapnya <i class="fas fa-arrow-right ml-1"></i></a>
-                </div>
             </div>
-
-            <!-- Article 2 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105">
-                <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=500&q=80" alt="Investment" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded mb-3">Investasi</span>
-                    <h3 class="text-xl font-bold text-blue-900 mb-3">Panduan Investasi Saham untuk Pemula</h3>
-                    <p class="text-gray-600 mb-4">Mulai investasi saham dengan langkah-langkah yang aman dan menguntungkan untuk pemula.</p>
-                    <a href="{{ route('article', ['id' => 2]) }}" class="text-gold-500 font-semibold hover:text-gold-600 transition-colors duration-300">Baca Selengkapnya <i class="fas fa-arrow-right ml-1"></i></a>
-                </div>
-            </div>
-
-            <!-- Article 3 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105">
-                <img src="https://images.unsplash.com/photo-1542744095-291d1f67b221?auto=format&fit=crop&w=500&q=80" alt="Savings" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded mb-3">Tabungan</span>
-                    <h3 class="text-xl font-bold text-blue-900 mb-3">Tips Menabung Efektif Meskipun Gaji Kecil</h3>
-                    <p class="text-gray-600 mb-4">Metode menabung yang bisa dilakukan meskipun penghasilan terbatas untuk membangun dana darurat.</p>
-                    <a href="{{ route('article', ['id' => 3]) }}" class="text-gold-500 font-semibold hover:text-gold-600 transition-colors duration-300">Baca Selengkapnya <i class="fas fa-arrow-right ml-1"></i></a>
-                </div>
-            </div>
-
-            <!-- Article 4 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105">
-                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=500&q=80" alt="Insurance" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded mb-3">Asuransi</span>
-                    <h3 class="text-xl font-bold text-blue-900 mb-3">Memilih Asuransi yang Tepat untuk Keluarga</h3>
-                    <p class="text-gray-600 mb-4">Panduan memilih jenis asuransi yang sesuai dengan kebutuhan dan kondisi keuangan Anda.</p>
-                    <a href="{{ route('article', ['id' => 4]) }}" class="text-gold-500 font-semibold hover:text-gold-600 transition-colors duration-300">Baca Selengkapnya <i class="fas fa-arrow-right ml-1"></i></a>
-                </div>
-            </div>
-
-            <!-- Article 5 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105">
-                <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=500&q=80" alt="Retirement" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded mb-3">Dana Pensiun</span>
-                    <h3 class="text-xl font-bold text-blue-900 mb-3">Persiapan Dana Pensiun Sejak Dini</h3>
-                    <p class="text-gray-600 mb-4">Kenapa penting menyiapkan dana pensiun sejak muda dan bagaimana cara memulainya.</p>
-                    <a href="{{ route('article', ['id' => 5]) }}" class="text-gold-500 font-semibold hover:text-gold-600 transition-colors duration-300">Baca Selengkapnya <i class="fas fa-arrow-right ml-1"></i></a>
-                </div>
-            </div>
-
-            <!-- Article 6 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105">
-                <img src="https://images.unsplash.com/photo-1556761175-4b46a8d8a50f?auto=format&fit=crop&w=500&q=80" alt="Debt" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded mb-3">Utang</span>
-                    <h3 class="text-xl font-bold text-blue-900 mb-3">Strategi Melunasi Utang dengan Cepat</h3>
-                    <p class="text-gray-600 mb-4">Metode efektif untuk melunasi utang dan kembali merdeka secara finansial.</p>
-                    <a href="{{ route('article', ['id' => 6]) }}" class="text-gold-500 font-semibold hover:text-gold-600 transition-colors duration-300">Baca Selengkapnya <i class="fas fa-arrow-right ml-1"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Load More Button -->
-        <div class="text-center mt-12">
-            <button class="bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md">
-                Muat Lebih Banyak Artikel
-            </button>
-        </div>
+        </form>
     </div>
 </section>
+
+<div class="bg-white border-b border-gray-100 sticky top-0 z-30 shadow-sm bg-opacity-90 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center gap-2 overflow-x-auto py-4 no-scrollbar">
+            <a href="{{ route('education') }}" class="whitespace-nowrap px-5 py-2 rounded-full text-sm font-semibold transition-all {{ !request('category') ? 'bg-blue-900 text-white shadow-md' : 'bg-gray-100 text-gray-600 hover:bg-gray-200' }}">
+                All Topics
+            </a>
+            @foreach(['Investasi', 'Budgeting', 'Saham', 'Crypto', 'Asuransi', 'Pajak', 'Bisnis'] as $cat)
+            <a href="{{ route('education', ['category' => $cat]) }}" class="whitespace-nowrap px-5 py-2 rounded-full text-sm font-semibold transition-all {{ request('category') == $cat ? 'bg-blue-900 text-white shadow-md' : 'bg-gray-100 text-gray-600 hover:bg-gray-200' }}">
+                {{ $cat }}
+            </a>
+            @endforeach
+        </div>
+    </div>
+</div>
+
+<div class="bg-gray-50 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        @if(!request('search') && !request('category'))
+        <div class="mb-16">
+            <h2 class="text-2xl font-bold text-blue-900 mb-6 flex items-center gap-2">
+                <i class="fas fa-star text-gold-500"></i> Editor's Pick
+            </h2>
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 grid grid-cols-1 lg:grid-cols-2 group hover:shadow-2xl transition-all duration-300">
+                <div class="relative h-64 lg:h-auto overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1579532415943-ca53cfb5db30?auto=format&fit=crop&w=800&q=80" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute top-4 left-4 bg-gold-500 text-blue-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+                        Trending
+                    </div>
+                </div>
+                <div class="p-8 lg:p-12 flex flex-col justify-center">
+                    <div class="flex items-center gap-3 text-sm text-gray-500 mb-4">
+                        <span class="flex items-center gap-1"><i class="far fa-clock"></i> 8 min read</span>
+                        <span>•</span>
+                        <span>Investasi</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-blue-900 mb-4 leading-tight group-hover:text-blue-700 transition-colors">
+                        Strategi Dollar Cost Averaging: Rahasia Cuan Tanpa Pusing Market Crash
+                    </h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Jangan biarkan emosi mengatur investasimu. Pelajari metode DCA yang terbukti ampuh melawan volatilitas pasar saham dan kripto dalam jangka panjang.
+                    </p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <div class="flex items-center gap-3">
+                            <img src="https://i.pravatar.cc/150?img=11" class="w-10 h-10 rounded-full border-2 border-white shadow-sm">
+                            <div>
+                                <p class="text-sm font-bold text-gray-900">Sarah Wijaya</p>
+                                <p class="text-xs text-gray-500">Financial Planner</p>
+                            </div>
+                        </div>
+                        <a href="#" class="w-12 h-12 rounded-full bg-blue-50 text-blue-900 flex items-center justify-center group-hover:bg-blue-900 group-hover:text-white transition-all">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
+
+        <div class="flex justify-between items-end mb-8">
+            <h2 class="text-2xl font-bold text-blue-900">
+                {{ request('search') ? 'Hasil Pencarian' : 'Artikel Terbaru' }}
+            </h2>
+            <form id="sortForm" class="hidden md:block">
+                <select name="sort" onchange="this.form.submit()" class="bg-white border border-gray-200 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 shadow-sm">
+                    <option value="newest">Terbaru</option>
+                    <option value="popular">Terpopuler</option>
+                </select>
+            </form>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            @php
+            $articles = [
+            ['title' => 'Dasar-Dasar Financial Planning', 'cat' => 'Budgeting', 'img' => 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c', 'read' => '5 min'],
+            ['title' => 'Panduan Investasi Saham Pemula', 'cat' => 'Saham', 'img' => 'https://images.unsplash.com/photo-1611974765270-ca1258634369', 'read' => '7 min'],
+            ['title' => 'Cara Menabung Gaji UMR', 'cat' => 'Budgeting', 'img' => 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e', 'read' => '4 min'],
+            ['title' => 'Mengenal Pajak Investasi', 'cat' => 'Pajak', 'img' => 'https://images.unsplash.com/photo-1586486855514-8c633cc6fd38', 'read' => '6 min'],
+            ['title' => 'Asuransi Kesehatan vs Jiwa', 'cat' => 'Asuransi', 'img' => 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d', 'read' => '5 min'],
+            ['title' => 'Apa itu Cryptocurrency?', 'cat' => 'Crypto', 'img' => 'https://images.unsplash.com/photo-1518546305927-5a555bb7020d', 'read' => '10 min'],
+            ];
+            @endphp
+
+            @foreach($articles as $index => $article)
+            <article class="bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 overflow-hidden transition-all duration-300 hover:-translate-y-1 flex flex-col h-full group">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="{{ $article['img'] }}?auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute top-3 left-3">
+                        <span class="bg-white/90 backdrop-blur-sm text-blue-900 text-xs font-bold px-3 py-1 rounded-md shadow-sm">
+                            {{ $article['cat'] }}
+                        </span>
+                    </div>
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <div class="flex items-center gap-2 text-xs text-gray-400 mb-3">
+                        <i class="far fa-calendar-alt"></i> 2 Hari lalu
+                        <span>•</span>
+                        <i class="far fa-clock"></i> {{ $article['read'] }} read
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3 leading-snug group-hover:text-blue-700 transition-colors">
+                        {{ $article['title'] }}
+                    </h3>
+                    <p class="text-gray-500 text-sm mb-4 line-clamp-2 flex-1">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore...
+                    </p>
+                    <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <img src="https://i.pravatar.cc/150?img={{ $index + 20 }}" class="w-6 h-6 rounded-full">
+                            <span class="text-xs font-semibold text-gray-600">Admin Maneki</span>
+                        </div>
+                        <a href="{{ route('article', ['id' => $index+1]) }}" class="text-gold-600 text-sm font-bold hover:underline">
+                            Baca <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+            @endforeach
+        </div>
+
+        <div class="mt-20">
+            <div class="bg-blue-900 rounded-3xl p-8 md:p-12 relative overflow-hidden text-center md:text-left">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl -mr-16 -mt-16"></div>
+                <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="max-w-xl">
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">Jangan Ketinggalan Ilmu Cuan! 🚀</h3>
+                        <p class="text-blue-100">Dapatkan ringkasan berita pasar dan tips keuangan mingguan langsung di inbox-mu.</p>
+                    </div>
+                    <div class="w-full md:w-auto">
+                        <form class="flex flex-col sm:flex-row gap-3">
+                            <input type="email" placeholder="Masukkan email kamu..." class="px-5 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-gold-400 w-full sm:w-80">
+                            <button class="bg-gold-500 hover:bg-gold-400 text-blue-900 font-bold px-6 py-3 rounded-lg transition-colors whitespace-nowrap">
+                                Subscribe Gratis
+                            </button>
+                        </form>
+                        <p class="text-xs text-blue-300 mt-2 text-center md:text-left">*Kami benci spam. Unsubscribe kapan saja.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-12">
+            <button class="inline-flex items-center gap-2 px-8 py-3 bg-white border border-gray-200 rounded-full text-blue-900 font-bold shadow-sm hover:shadow-md hover:bg-gray-50 transition-all">
+                <i class="fas fa-sync-alt"></i> Muat Lebih Banyak
+            </button>
+        </div>
+
+    </div>
+</div>
 @endsection
