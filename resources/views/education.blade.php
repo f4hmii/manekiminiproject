@@ -54,7 +54,55 @@
         <div class="text-center mb-12">
             <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Artikel Terbaru</h2>
             <p class="text-lg text-gray-600">Temukan berbagai topik menarik seputar keuangan pribadi</p>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
+            <form method="GET" action="{{ route('education') }}">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- Search Bar -->
+                    <div class="relative">
+                        <input
+                            type="text"
+                            name="search"
+                            placeholder="Search articles..."
+                            class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            value="{{ request('search') }}"
+                        >
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Category Filter -->
+                    <select name="category" class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        <option value="">All Categories</option>
+                        <option value="Budgeting" {{ request('category') === 'Budgeting' ? 'selected' : '' }}>Budgeting</option>
+                        <option value="Investing" {{ request('category') === 'Investing' ? 'selected' : '' }}>Investing</option>
+                        <option value="Savings" {{ request('category') === 'Savings' ? 'selected' : '' }}>Savings</option>
+                        <option value="Retirement Planning" {{ request('category') === 'Retirement Planning' ? 'selected' : '' }}>Retirement Planning</option>
+                        <option value="Insurance" {{ request('category') === 'Insurance' ? 'selected' : '' }}>Insurance</option>
+                        <option value="Debt Management" {{ request('category') === 'Debt Management' ? 'selected' : '' }}>Debt Management</option>
+                        <option value="Tax Planning" {{ request('category') === 'Tax Planning' ? 'selected' : '' }}>Tax Planning</option>
+                        <option value="Credit Management" {{ request('category') === 'Credit Management' ? 'selected' : '' }}>Credit Management</option>
+                    </select>
+
+                    <!-- Sort Options -->
+                    <select name="sort" class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        <option value="newest" {{ request('sort') === 'newest' ? 'selected' : '' }}>Newest First</option>
+                        <option value="oldest" {{ request('sort') === 'oldest' ? 'selected' : '' }}>Oldest First</option>
+                        <option value="title" {{ request('sort') === 'title' ? 'selected' : '' }}>Title A-Z</option>
+                    </select>
+                </div>
+                <div class="mt-4 flex justify-center">
+                    <button type="submit" class="bg-blue-900 text-white px-6 py-2 rounded-lg hover:bg-blue-800 transition-colors">
+                        Apply Filters
+                    </button>
+                </div>
+            </form>
         </div>
+        </div>
+
+        
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Article 1 -->
